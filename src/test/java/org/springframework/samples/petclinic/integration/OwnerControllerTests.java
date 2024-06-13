@@ -10,6 +10,7 @@ import org.hamcrest.Matchers;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.runners.Parameterized;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
@@ -103,6 +104,13 @@ class OwnerControllerTests {
 			.contentType(ContentType.HTML)
 			.statusCode(200)
 			.body(ownerLinkMatcher, Matchers.notNullValue());
+
+		given().contentType(ContentType.JSON)
+			.when()
+			.get("/owners")
+			.then()
+			.contentType(ContentType.HTML)
+			.statusCode(200);
 
 		// assertThat(false).isTrue();
 
