@@ -26,7 +26,10 @@ jobs:
           cache: maven
           
       - name: Impact radius
-        uses: digma-ai/digma-actions/blast-radius@v1.0.29
+        uses: digma-ai/digma-actions/blast-radius@v1.0.30
+        with:
+          base_ref: ${{ github.base_ref }}  # Pass the base branch from PR
+          head_ref: ${{ github.head_ref }}
           
       - name: Instrument app
         uses: digma-ai/digma-actions/instrument@v1.0.29
