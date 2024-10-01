@@ -4,8 +4,9 @@
 name: Java CI with Maven
 
 on:
-  pull_request:
-    branches: [ main, feature/add-vaccination-logic ]
+  pull_request:  # Trigger the workflow on a PR event
+    types: [opened, synchronize, reopened]
+
 
 jobs:
   build:
