@@ -7,7 +7,7 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    branches: [ main, add-vaccination-logic ]
+    branches: [ main, feature/add-vaccination-logic ]
 
 jobs:
   build:
